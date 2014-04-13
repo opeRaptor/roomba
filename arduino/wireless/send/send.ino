@@ -31,6 +31,7 @@ void sendCommandToRX(uint8_t command){
   c[0]=command; 
   vw_send(c, 1);
   vw_wait_tx(); // Wait until the whole message is gone
+  digitalWrite(13,1);
 }
 void start() 
 {
@@ -110,7 +111,6 @@ void loop() {
     {
       sendPacket("Clean Command Sent");
       clean();
-      digitalWrite(13,1);
       delay (500);
     }
     if (incomingPacket== "DOCK")

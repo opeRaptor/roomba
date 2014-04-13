@@ -29,7 +29,7 @@ void loop() {
     if (vw_get_message(buf, &buflen)) // Non-blocking
     {
        digitalWrite(13,1);
-       Roomba.write((short)buf[0]);
+       Roomba.write((uint8_t)buf[0]);
     }
   //}
 
